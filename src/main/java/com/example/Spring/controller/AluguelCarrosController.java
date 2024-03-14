@@ -17,7 +17,7 @@ import com.example.Spring.entity.AluguelCarro;
 import com.example.Spring.service.AluguelCarroService;
 
 @RestController
-@RequestMapping("aluguel")
+@RequestMapping("/aluguel")
 @CrossOrigin(origins = "*")
 public class AluguelCarrosController {
     
@@ -39,7 +39,7 @@ public class AluguelCarrosController {
         return aluguelCarroService.alterar(aluguelCarro);
     }
 
-    @DeleteMapping("/{id}delete")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") long id){
         aluguelCarroService.delete(id);
         return ResponseEntity.ok().build();

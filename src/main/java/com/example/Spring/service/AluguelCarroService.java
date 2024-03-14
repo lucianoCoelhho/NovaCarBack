@@ -24,7 +24,7 @@ public class AluguelCarroService {
 
     public AluguelCarro alterar(AluguelCarro aluguelCarro){
         aluguelCarroRepository.findById(aluguelCarro.getId()).orElse(null);
-        return null;
+        return aluguelCarroRepository.saveAndFlush(aluguelCarro);
     }
     
     public void delete(long id){
